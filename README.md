@@ -70,7 +70,7 @@ VAR PrevYearSales =
     )
 RETURN
     IF(PrevYearSales <> 0, (CurrYearSales - PrevYearSales) / PrevYearSales, BLANK())
-
+```
 
 ### Median Sales Price Change
 ```dax
@@ -87,7 +87,7 @@ VAR PrevMedianPrice =
     )
 RETURN
     IF(PrevMedianPrice <> 0, (CurrMedianPrice - PrevMedianPrice) / PrevMedianPrice, BLANK())
-
+```
 
 ### Trailing 12-Month Sales
 ```dax
@@ -96,7 +96,7 @@ CALCULATE(
     SUM('Housing'[purchase_price]),
     DATESINPERIOD('Housing'[date], MAX('Housing'[date]), -12, MONTH)
 )
-
+```
 
 ### Regional Aggregation & Unit Economics
 ```dax
@@ -108,8 +108,7 @@ CALCULATE(SUM('Housing'[purchase_price]), ALLEXCEPT('Housing', 'Housing'[region]
 Offer To SQM Ration = 
 DIVIDE(SUM('Housing'[Offer Price]), SUM('Housing'[sqm]))
 
----
-
+```
 ## 🚀 How to Open and Run
 
 1. Clone or download this repository to your local machine.
