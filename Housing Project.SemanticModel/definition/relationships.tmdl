@@ -1,0 +1,5 @@
+relationship df8a1358-e9ad-45e5-b4ed-9c238bec2bc4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Housing.date
+	toColumn: LocalDateTable_2480fefd-e06f-401b-9a96-c72ec6828474.Date
+

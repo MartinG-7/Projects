@@ -1,0 +1,211 @@
+table Housing
+	lineageTag: b1ff5753-c762-4c97-9d66-ff4ade761cd9
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2dc68e4c-3abd-444d-9b18-0a16dcefcd87
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: df8a1358-e9ad-45e5-b4ed-9c238bec2bc4
+			defaultHierarchy: LocalDateTable_2480fefd-e06f-401b-9a96-c72ec6828474.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column quarter
+		dataType: string
+		lineageTag: ba623a22-48a6-4695-95ab-212659b84630
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column house_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 03a85816-757d-4bf8-acd7-543ecac97930
+		summarizeBy: sum
+		sourceColumn: house_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column house_type
+		dataType: string
+		lineageTag: 43bf8685-0041-4177-85b7-6740f70620ce
+		summarizeBy: none
+		sourceColumn: house_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_type
+		dataType: string
+		lineageTag: fde77725-e90e-41fc-b467-78202c603c2f
+		summarizeBy: none
+		sourceColumn: sales_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_build
+		dataType: int64
+		formatString: 0
+		lineageTag: d48432be-b12e-4c37-8009-2c93ac5b587c
+		summarizeBy: sum
+		sourceColumn: year_build
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_price
+		dataType: int64
+		formatString: 0
+		lineageTag: 60c8e2f3-3b91-4a72-abca-3c053c0dbc16
+		summarizeBy: sum
+		sourceColumn: purchase_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column %_change_between_offer_and_purchase
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ffef328-d292-429e-8a46-f1214414546c
+		summarizeBy: sum
+		sourceColumn: %_change_between_offer_and_purchase
+
+		annotation SummarizationSetBy = Automatic
+
+	column no_rooms
+		dataType: int64
+		formatString: 0
+		lineageTag: ebb50c27-26e6-4a9a-86b0-3a70aa684d30
+		summarizeBy: sum
+		sourceColumn: no_rooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column sqm
+		dataType: int64
+		formatString: 0
+		lineageTag: cf301bf6-3f62-44c7-9643-4af0b5c84c86
+		summarizeBy: sum
+		sourceColumn: sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column sqm_price
+		dataType: double
+		lineageTag: b2384de1-773b-4518-b9fd-ce15235c75dd
+		summarizeBy: sum
+		sourceColumn: sqm_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column address
+		dataType: string
+		lineageTag: 2f25f4e1-c284-4d9e-954c-f278f04f5af7
+		summarizeBy: none
+		sourceColumn: address
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 3dd377b1-bbfc-4ad4-82a0-2abeb23fe339
+		summarizeBy: sum
+		sourceColumn: zip_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 5cfbe366-9d5e-4265-8eec-0c0983987d81
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column area
+		dataType: string
+		lineageTag: 122f6018-a4aa-49a1-82bd-fe51c073c5fa
+		summarizeBy: none
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 5b1a1b73-3009-4878-9bb3-40d954de6b00
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_interest_rate%
+		dataType: double
+		lineageTag: a4be1742-56f6-45a8-a1fa-f91ebbd458de
+		summarizeBy: sum
+		sourceColumn: nom_interest_rate%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dk_ann_infl_rate%
+		dataType: double
+		lineageTag: aa30092b-636f-415c-8789-cbbf80b8bf25
+		summarizeBy: sum
+		sourceColumn: dk_ann_infl_rate%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column yield_on_mortgage_credit_bonds%
+		dataType: double
+		lineageTag: 985580fe-d175-4ee8-b67c-96d32e9d712d
+		summarizeBy: sum
+		sourceColumn: yield_on_mortgage_credit_bonds%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Offer Price' = (100 * Housing[purchase_price])/(100-Housing[%_change_between_offer_and_purchase])
+		lineageTag: eb920037-d02b-4083-8b94-1b06c6f3c778
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Age = ABS(YEAR('Housing'[date].[Date])-'Housing'[year_build])
+		formatString: 0
+		lineageTag: a8ec280c-b645-40ab-9f82-c99793bc92b3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Housing = m
+		mode: import
+		source =
+				let
+				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
+				    #"project-756ca98a-b0d2-452c-b8b_Database" = Source{[Name="project-756ca98a-b0d2-452c-b8b",Kind="Database"]}[Data],
+				    #"1_Schema" = #"project-756ca98a-b0d2-452c-b8b_Database"{[Name="1",Kind="Schema"]}[Data],
+				    Housing_Table = #"1_Schema"{[Name="Housing",Kind="Table"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(Housing_Table,null,"Unknown",Replacer.ReplaceValue,{"city"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value",null,1.85,Replacer.ReplaceValue,{"dk_ann_infl_rate%"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1",null,1.47,Replacer.ReplaceValue,{"yield_on_mortgage_credit_bonds%"})
+				in
+				    #"Replaced Value2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

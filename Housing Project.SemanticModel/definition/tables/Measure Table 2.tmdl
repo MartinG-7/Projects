@@ -1,0 +1,35 @@
+table 'Measure Table 2'
+	lineageTag: 01beba88-1ddb-40b4-9424-df39df18596f
+
+	measure 'Sales By Region' =
+			
+			CALCULATE(SUM('Housing'[purchase_price]),ALLEXCEPT('Housing','Housing'[region]))
+		formatString: 0
+		lineageTag: 4ff5ec6a-6da1-4d44-be8a-049e2da596cb
+
+	measure 'TotalYTD Sales' = TOTALYTD(SUM('Housing'[purchase_price]),'Housing'[date].[Date])
+		formatString: 0
+		lineageTag: a735d702-c8f6-4790-9364-3d648c801dbc
+
+	measure 'Average Price SQM' = AVERAGE('Housing'[sqm_price])
+		lineageTag: 47ac7188-0d52-47ca-b06e-09d1b868cb9a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Offer To SQM Ration' = DIVIDE(SUM('Housing'[Offer Price]),SUM('Housing'[sqm]))
+		lineageTag: 86da5500-914f-4d39-a8db-912db6526ecd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Measure Table 2' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
