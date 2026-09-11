@@ -109,13 +109,15 @@ Offer To SQM Ration =
 DIVIDE(SUM('Housing'[Offer Price]), SUM('Housing'[sqm]))
 
 ```
+---
 
-## Dashboard Previews
+## 📊 Dashboard Previews
 ![House Market Overview](<Housing Project Visuals/Page 1.png>)
 ![Sales Performance](<Housing Project Visuals/Page 2.png>)
 ![Macroeconomic Analysis](<Housing Project Visuals/Page 3.png>)
 
-```
+---
+
 ## 🚀 How to Open and Run
 
 1. Clone or download this repository to your local machine.
