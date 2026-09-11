@@ -111,9 +111,9 @@ DIVIDE(SUM('Housing'[Offer Price]), SUM('Housing'[sqm]))
 ```
 
 ## Dashboard Previews
-![House Market Overview](<House Project Visuals/Page 1.png>)
-![Sales Performance](<House Project Visuals/Page 2.png>)
-![Macroeconomic Analysis](<House Project Visuals/Page 3.png>)
+![House Market Overview](<Housing Project Visuals/Page 1.png>)
+![Sales Performance](<Housing Project Visuals/Page 2.png>)
+![Macroeconomic Analysis](<Housing Project Visuals/Page 3.png>)
 
 ```
 ## 🚀 How to Open and Run
