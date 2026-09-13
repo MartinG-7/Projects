@@ -119,5 +119,4 @@ CALCULATE(
 ## 🚀 How to Open and Run
 
 1. Clone or download this repository as a `.zip` file and extract it.
-2. Open Power BI Desktop (ensure **PBIP format preview** is enabled in *Options > Preview Features*).
-3. Open `Warehouse_Analysis_Project.pbix`.
+2. Open `Warehouse_Analysis_Project.pbix` in **Power BI Desktop**.
