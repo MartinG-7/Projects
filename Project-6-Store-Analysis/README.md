@@ -64,9 +64,9 @@ Presents isolated horizontal split tiles for Date Filter 1 (e.g., custom window 
 ---
 
 ### 5. Detailed Transactional & Customer Audit Ledger
-A granular audit table equipped with interactive slicers for `Date`, `Customer Name`, `Product Name`, and `Promotion Name`[cite: 25, 26, 27, 28].
+A granular audit table equipped with interactive slicers for `Date`, `Customer Name`, `Product Name`, and `Promotion Name`.
 
-* Displays line-item order details: `CustomerID`, `Date (dd/mm/yyyy)`, `Discount Percentage`, `Discount Value`, `Net Sales`, `Price Per Unit`, `OrderID`, `Product ID`, `Profit`, `PromotionID`, `Total Sales`, and `Units Sold`[cite: 28].
+* Displays line-item order details: `CustomerID`, `Date (dd/mm/yyyy)`, `Discount Percentage`, `Discount Value`, `Net Sales`, `Price Per Unit`, `OrderID`, `Product ID`, `Profit`, `PromotionID`, `Total Sales`, and `Units Sold`.
 
 ![Detailed Transaction Ledger](<Project Visuals/5.png>)
 
@@ -121,4 +121,4 @@ CALCULATE(
 
 1. Clone or download this repository as a `.zip` archive and extract it locally.
 2. Open the file in **Power BI Desktop**.
-3. **Data Refresh Notice:** Ingestion paths are mapped to local file storage (`Store+Data.xlsx`)[cite: 25, 26, 27, 28]. To refresh live rows, adjust the source file path under **Power Query > Data Source Settings**[cite: 25, 26, 27, 28]. All visual configurations, custom color palettes, DAX logic, and table relationships can be fully inspected offline without an active refresh.
+3. **Data Refresh Notice:** Ingestion paths are mapped to local file storage (`Store+Data.xlsx`). To refresh live rows, adjust the source file path under **Power Query > Data Source Settings**. All visual configurations, custom color palettes, DAX logic, and table relationships can be fully inspected offline without an active refresh.
