@@ -8,7 +8,7 @@ An enterprise Power BI reporting solution designed to analyze consumer credit ri
 
 This project provides end-to-end visibility into lending portfolio exposure, delinquency rates, and demographic distributions. It evaluates borrower risk profiles by analyzing credit scoring bins, debt-to-income (DTI) metrics, employment stability, and educational backgrounds across multi-year lending cycles.
 
-* **Format:** Power BI Project (`.pbip`)
+* **Format:** Power BI Project (`.pbix`)
 * **Storage Mode:** Import Mode
 * **Data Pipeline & Architecture:**
   * **Data Source & Flow:** Data was sourced directly via a **Power BI Dataflow** running over an **On-Premises Data Gateway** connected to **Microsoft SQL Server**.
@@ -120,5 +120,4 @@ CALCULATE(
 
 1. Clone or download this repository as a `.zip` file and extract it.
 2. Open Power BI Desktop (ensure **PBIP format preview** is enabled in *Options > Preview Features*).
-3. Open `Warehouse_Analysis_Project.pbip`.
-4. Data Refresh Notice: The semantic model queries a local production MySQL database. While full model definitions, DAX logic, and reports can be inspected locally, refreshing rows requires active credentials and a matching database host.
+3. Open `Warehouse_Analysis_Project.pbix`.
