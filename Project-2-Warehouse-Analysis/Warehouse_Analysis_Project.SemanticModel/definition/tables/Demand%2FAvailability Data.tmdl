@@ -1,0 +1,83 @@
+table 'Demand/Availability Data'
+	lineageTag: 5f6b9c97-4948-4275-8564-5270d7204c07
+
+	column Order_Date_DD_MM_YYYY
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 57ac97c2-9fe1-4c28-86f4-f3ec2bb0c2e9
+		summarizeBy: none
+		sourceColumn: Order_Date_DD_MM_YYYY
+
+		variation Variation
+			isDefault
+			relationship: b7ef762a-6517-4d30-b75e-1b3c3d447435
+			defaultHierarchy: LocalDateTable_22f93aaa-fbda-4395-b9ab-02ddb3072606.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Product_ID
+		dataType: string
+		lineageTag: c269f2b6-e030-4589-b4da-4f089714f6cf
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Availability
+		dataType: int64
+		formatString: 0
+		lineageTag: 13fc0a3d-ba5b-42e7-a29a-60de1896f622
+		summarizeBy: sum
+		sourceColumn: Availability
+
+		annotation SummarizationSetBy = Automatic
+
+	column Demand
+		dataType: int64
+		formatString: 0
+		lineageTag: a61fdd9c-3693-49b1-865c-fc0d519332d9
+		summarizeBy: sum
+		sourceColumn: Demand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Name
+		dataType: string
+		lineageTag: 26ebdc10-55c0-4216-bd4f-64df7159785a
+		summarizeBy: none
+		sourceColumn: Product_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit_Price
+		dataType: double
+		lineageTag: 6d0a496f-ed01-4442-bc13-d5135affd87a
+		summarizeBy: sum
+		sourceColumn: Unit_Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Loss/Profit = 'Demand/Availability Data'[Availability]-'Demand/Availability Data'[Demand]
+		formatString: 0
+		lineageTag: 36a901dc-6d2d-41e3-961d-2cd79fdc0900
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Demand/Availability Data' = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "PROD", [ReturnSingleDatabase=true, Query="select * from new_table;"]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Order_Date_DD_MM_YYYY", type date}, {"Product_ID", type text}, {"Availability", Int64.Type}, {"Demand", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

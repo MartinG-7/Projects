@@ -1,0 +1,5 @@
+relationship b7ef762a-6517-4d30-b75e-1b3c3d447435
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Demand/Availability Data'.Order_Date_DD_MM_YYYY
+	toColumn: LocalDateTable_22f93aaa-fbda-4395-b9ab-02ddb3072606.Date
+
