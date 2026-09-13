@@ -119,4 +119,4 @@ CALCULATE(
 ## 🚀 How to Open and Run
 
 1. Clone or download this repository as a `.zip` file and extract it.
-2. Open `Warehouse_Analysis_Project.pbix` in **Power BI Desktop**.
+2. Open `Payment-Interface-Analysis-Project.pbix` in **Power BI Desktop**.
