@@ -26,7 +26,7 @@ Focuses on macro lending volume, primary borrowing purposes, and default rate be
 * **Age Segment Allocation:** Evaluates average borrowed capital across defined age demographics.
 * **Default Rate (%) by Year:** Multi-year trend line monitoring macro portfolio health.
 
-![Loan Default & Overview](<Project Visuals/1.>)
+![Loan Default & Overview](<Project Visuals/1.png>)
 
 ### 2. Applicant Demographics & Financial Profile
 Drills into granular credit scoring tiers, dependent statuses, and marital attributes.
@@ -36,7 +36,7 @@ Drills into granular credit scoring tiers, dependent statuses, and marital attri
 * **Obligation Analysis:** Column chart evaluating loan exposure among middle-aged borrowers based on mortgage and dependent status.
 * **Volume by Education:** Loan distribution across degree classifications (Bachelor's, High School, Master's, PhD).
 
-![Applicant Demographics & Financial Profile](<Project Visuals/2.>)
+![Applicant Demographics & Financial Profile](<Project Visuals/2.png>)
 
 ### 3. Financial Risk Metrics
 Advanced analytical tracking covering time intelligence, portfolio movements, and root-cause decomposition.
@@ -114,3 +114,11 @@ CALCULATE(
     ALLEXCEPT('Loan_default', 'Loan_default'[Credit Score Bins], 'Loan_default'[MaritalStatus])
 )
 ```
+---
+
+## 🚀 How to Open and Run
+
+1. Clone or download this repository as a `.zip` file and extract it.
+2. Open Power BI Desktop (ensure **PBIP format preview** is enabled in *Options > Preview Features*).
+3. Open `Warehouse_Analysis_Project.pbip`.
+4. Data Refresh Notice: The semantic model queries a local production MySQL database. While full model definitions, DAX logic, and reports can be inspected locally, refreshing rows requires active credentials and a matching database host.
