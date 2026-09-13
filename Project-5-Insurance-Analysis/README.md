@@ -95,5 +95,4 @@ dataset['Score sentiment'] = dataset['Feedback'].apply(
 ## 🚀 How to View and Run
 
 1. Clone or download this repository as a `.zip` archive and extract the project files locally.
-2. Launch **Power BI Desktop** (ensure **Power BI Project (.pbip)** format is active under *File > Options and settings > Options > Preview features*).
-3. Open the `.pbip` launcher file for this project
+2. Open the file in **Power BI Desktop**.
