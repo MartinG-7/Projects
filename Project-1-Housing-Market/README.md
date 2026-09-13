@@ -121,5 +121,4 @@ DIVIDE(SUM('Housing'[Offer Price]), SUM('Housing'[sqm]))
 ## 🚀 How to Open and Run
 
 1. Clone or download this repository to your local machine.
-2. Open Power BI Desktop (ensure **PBIP format preview** is enabled in *Options > Preview Features*).
-3. Open the `Housing Project.pbix` file.
+2. Open `Housing Project.pbix` file in **Power BI Desktop**.
