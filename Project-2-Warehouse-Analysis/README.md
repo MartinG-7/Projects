@@ -25,7 +25,7 @@ Focuses on operational volume metrics, daily transaction velocity, and overall i
 * **Average Availability per Day:** Monitors standard stock replenishment rates.
 * **Total Supply Shortage:** Cumulative units where customer demand exceeded warehouse fulfillment capability.
 
-![Operational KPIs](images/1.jpg)
+![Operational KPIs](<Project Visuals/1.jpg>)
 
 ### 2. Financial Impact & Business Optimization
 Quantifies inventory performance in terms of profitability and lost revenue due to stockouts.
@@ -34,7 +34,7 @@ Quantifies inventory performance in terms of profitability and lost revenue due 
 * **Total Loss:** Financial valuation of unmet demand (stockouts multiplied by unit pricing).
 * **Average Daily Loss:** Trailing day-over-day financial loss run-rate to assess operational friction.
 
-![Financial KPIs](images/2.jpg)
+![Financial KPIs](<Project Visuals/2.jpg>)
 
 ---
 
@@ -80,3 +80,32 @@ DIVIDE('Measures Table'[Total Availability], 'Measures Table'[Total Number Of Da
 
 Total Supply Shortage = 
 'Measures Table'[Total Demand] - 'Measures Table'[Total Availability]
+```
+
+### Financial Impact Measures
+
+// Evaluates deficit transactions against unit price to calculate total lost revenue
+Total Loss = 
+SUMX(
+    FILTER('Demand/Availability Data', 'Demand/Availability Data'[Loss/Profit] < 0),
+    'Demand/Availability Data'[Loss/Profit] * 'Demand/Availability Data'[Unit_Price]
+) * -1
+
+// Evaluates fulfilled transactions against unit price
+Total Profit = 
+SUMX(
+    FILTER('Demand/Availability Data', 'Demand/Availability Data'[Loss/Profit] > 0),
+    'Demand/Availability Data'[Loss/Profit] * 'Demand/Availability Data'[Unit_Price]
+)
+
+Average Loss Per Day = 
+DIVIDE('Measures Table'[Total Loss], 'Measures Table'[Total Number Of Days])
+
+---
+
+## 🚀 How to Open and Run
+
+1. Clone or download this repository as a .zip file and extract it.
+2.Open Power BI Desktop (ensure Power BI Project (.pbip) preview feature is turned on in File > Options > Preview Features).
+3.Open Warehouse_Analysis_Project.pbip.
+4.Data Refresh Notice: The semantic model queries a local production MySQL database. While full model definitions, DAX logic, and reports can be inspected locally, refreshing rows requires active credentials and a matching database host.
