@@ -76,5 +76,5 @@ Transformed via Power Query M steps to split combined timestamps into dedicated 
 ## 🚀 How to View and Run
 
 1. Clone or download this repository as a `.zip` archive and extract the project files locally.
-2. Launch **Power BI Desktop** (verify that **Power BI Project (.pbip)** format is active under *File > Options and settings > Options > Preview features*).
-3. Open `Payment_Interface_Analysis_Project.pbix`.
+2. Open `Payment_Interface_Analysis_Project.pbix` in **Power BI Desktop**.
+   
