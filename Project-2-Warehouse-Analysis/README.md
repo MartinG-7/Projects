@@ -106,6 +106,6 @@ DIVIDE('Measures Table'[Total Loss], 'Measures Table'[Total Number Of Days])
 ## 🚀 How to Open and Run
 
 1. Clone or download this repository as a .zip file and extract it.
-2.Open Power BI Desktop (ensure Power BI Project (.pbip) preview feature is turned on in File > Options > Preview Features).
-3.Open Warehouse_Analysis_Project.pbip.
-4.Data Refresh Notice: The semantic model queries a local production MySQL database. While full model definitions, DAX logic, and reports can be inspected locally, refreshing rows requires active credentials and a matching database host.
+2. Open Power BI Desktop (ensure **PBIP format preview** is enabled in *Options > Preview Features*).
+3. Open Warehouse_Analysis_Project.pbip.
+4. Data Refresh Notice: The semantic model queries a local production MySQL database. While full model definitions, DAX logic, and reports can be inspected locally, refreshing rows requires active credentials and a matching database host.
