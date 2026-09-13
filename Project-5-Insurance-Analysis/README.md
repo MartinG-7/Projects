@@ -95,4 +95,4 @@ dataset['Score sentiment'] = dataset['Feedback'].apply(
 ## 🚀 How to View and Run
 
 1. Clone or download this repository as a `.zip` archive and extract the project files locally.
-2. Open the file in **Power BI Desktop**.
+2. Open `Insurance_Project.pbix` in **Power BI Desktop**.
