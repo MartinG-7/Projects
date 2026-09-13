@@ -8,7 +8,7 @@ A Power BI analytical reporting solution built to evaluate monthly digital payme
 
 This dashboard provides detailed tracking of digital transaction volumes, velocity, and post-transaction account liquidity[cite: 20]. It features extensive slicing across banking endpoints, geographic clusters, demographic cohorts, device types, and payment mechanisms to uncover seasonal peaks, cash flow trends, and regional spending behavior.
 
-* **Format:** Power BI Project (`.pbip`) via `Payment_Interface_Analysis_Project.Report`
+* **Format:** Power BI Project (`.pbix`)
 * **Storage Mode:** Import Mode
 * **Data Source:** Excel Data Ingestion (`UPI+Transactions.xlsx`) processed via Power Query transformations
 
