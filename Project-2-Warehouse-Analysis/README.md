@@ -8,7 +8,7 @@ A Power BI analytical solution designed to evaluate warehouse inventory dynamics
 
 This reporting project evaluates business inventory health by pairing product-level daily demand against stock availability. The objective is to identify critical supply chain deficits, track inventory fulfillment consistency, and quantify uncaptured revenue versus profitable transactions.
 
-* **Format:** Power BI Project (`.pbip`) via `Warehouse_Analysis_Project.Report`
+* **Format:** Power BI Project (`.pbix`)
 * **Storage Mode:** Import Mode
 * **Data Pipeline & Architecture:**
   * The core relational schema and table structure were initially created in **Microsoft SQL Server**.
@@ -107,5 +107,4 @@ DIVIDE('Measures Table'[Total Loss], 'Measures Table'[Total Number Of Days])
 
 1. Clone or download this repository as a `.zip` file and extract it.
 2. Open Power BI Desktop (ensure **PBIP format preview** is enabled in *Options > Preview Features*).
-3. Open `Warehouse_Analysis_Project.pbip`.
-4. Data Refresh Notice: The semantic model queries a local production MySQL database. While full model definitions, DAX logic, and reports can be inspected locally, refreshing rows requires active credentials and a matching database host.
+3. Open `Warehouse_Analysis_Project.pbix`.
