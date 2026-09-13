@@ -120,5 +120,4 @@ CALCULATE(
 ## 🚀 How to View and Run
 
 1. Clone or download this repository as a `.zip` archive and extract it locally.
-2. Open the file in **Power BI Desktop**.
-3. **Data Refresh Notice:** Ingestion paths are mapped to local file storage (`Store+Data.xlsx`). To refresh live rows, adjust the source file path under **Power Query > Data Source Settings**. All visual configurations, custom color palettes, DAX logic, and table relationships can be fully inspected offline without an active refresh.
+2. Open `Store_Analysis_Project.pbix` in **Power BI Desktop**.
