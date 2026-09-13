@@ -9,7 +9,7 @@ An end-to-end Power BI reporting solution that tracks Danish housing market dyna
 
 This project analyzes historical residential property transactions to evaluate property valuations, sales velocity, and regional market distribution. It incorporates macroeconomic indicators—such as inflation, nominal interest rates, and bond yields—to assess their relationship with housing transactions and pricing behavior.
 
-* **Format:** Power BI Project (`.pbip`)
+* **Format:** Power BI Project (`.pbix`)
 * **Data Warehouse:** Google BigQuery (`project-756ca98a-b0d2-452c-b8b`)
 * **Storage Mode:** Import Mode
 
